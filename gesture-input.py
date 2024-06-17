@@ -17,8 +17,9 @@ FOLDER_PATH = 'dataset/my-dataset'
 
 type = "stroke"
 
-if len(sys.argv) > 2:
+if len(sys.argv) > 1:
     type = str(sys.argv[1])
+    print("T", type)
 
 #Helper class for storing
 class Stroke:
@@ -119,8 +120,7 @@ class DrawWindow(pyglet.window.Window):
             duration = int((end_time - self.start_time) * 1000)  # Duration in milliseconds
 
             points = [recognizer.Point(px, py, pt) for px, py, pt in self.stroke_points]
-            for p in points:
-                print(p.x, p.y, p.t)
+            print("TYPE", type)
             stroke_name = f"{type}_{len(self.strokes) + 1:02}"
             stroke = Stroke(stroke_name, points, len(self.strokes) + 1, duration)
             self.strokes.append(stroke)

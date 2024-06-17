@@ -5,6 +5,8 @@
 
 Mein Recognizer hat 4792 der 5280 vorgelabelten Gesten erkannt. Damit hat er für diesen Datensatz eine Accurary von über 90%.
 
+Beim Ausführen des Zeichnens wird auch gleich gespeichert (für Task 2). Hierfür kann das entsprechende Label übergeben werden, z.B. `python gesture-input.py left_curly_brace`
+
 # Task 2
 
 # Task 3
