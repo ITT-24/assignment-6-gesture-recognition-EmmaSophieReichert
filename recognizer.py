@@ -16,9 +16,10 @@ ANGLE_PRECISION = math.radians(2.0)
 PHI = 0.5 * (-1.0 + math.sqrt(5.0))  # Golden Ratio
 
 class Point:
-    def __init__(self, x, y):
+    def __init__(self, x, y, t = 0):
         self.x = x
         self.y = y
+        self.t = t
 
 ORIGIN = Point(0, 0)
 
@@ -201,7 +202,7 @@ test_data = load_unistrokes_from_XML("dataset/data")
 
 true = 0
 false = 0
-for unistroke in test_data:
+for unistroke in test_data[:20]:
     if unistroke.name == dollarRecognizer.recognize(unistroke.points).name:
         true = true + 1
     else:
