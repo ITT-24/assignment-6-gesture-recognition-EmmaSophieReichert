@@ -3,7 +3,8 @@
 Dataset from:
 https://depts.washington.edu/acelab/proj/dollar/xml.zip
 
-Used the first dataset for training.
+Used the first dataset for training for first approach.
+For second approach, I used the whole Dataset.
 
 For TASK 2:
 

@@ -1,4 +1,7 @@
 # $1 gesture recognizer
+
+# used https://depts.washington.edu/acelab/proj/dollar/dollar.js and used GPT for translation to python
+
 import numpy as np
 import math
 import xml.etree.ElementTree as ET
@@ -171,7 +174,39 @@ def load_unistrokes_from_XML(path):
 
 class DollarRecognizer:
     def __init__(self):
-        self.unistrokes = load_unistrokes_from_XML("dataset/training")
+        #self.unistrokes = load_unistrokes_from_XML("dataset/training") #first approach
+        self.unistrokes = load_unistrokes_from_XML("dataset/data")
+        self.unistrokes = self.load_and_average_unistrokes(self.unistrokes)
+
+    #sort all the unistrokes by name and return a list of one average unistroke per name
+    def load_and_average_unistrokes(self, unistrokes):
+        unistroke_dict = {}
+        
+        for unistroke in unistrokes:
+            if unistroke.name not in unistroke_dict:
+                unistroke_dict[unistroke.name] = []
+            unistroke_dict[unistroke.name].append(unistroke.points)
+        
+        averaged_unistrokes = []
+        for name, points_list in unistroke_dict.items():
+            avg_points = self.calculate_average_points(points_list)
+            averaged_unistrokes.append(Unistroke(name, avg_points))
+        
+        return averaged_unistrokes
+
+    #calculate an average point
+    def calculate_average_points(self, points_list):
+        num_points = len(points_list[0])
+        avg_points = []
+        
+        for i in range(num_points):
+            sum_x = sum(point[i].x for point in points_list)
+            sum_y = sum(point[i].y for point in points_list)
+            avg_x = sum_x / len(points_list)
+            avg_y = sum_y / len(points_list)
+            avg_points.append(Point(avg_x, avg_y))
+        
+        return avg_points
 
     def recognize(self, points):
         t0 = time.time()
@@ -202,7 +237,7 @@ test_data = load_unistrokes_from_XML("dataset/data")
 
 true = 0
 false = 0
-for unistroke in test_data[:20]:
+for unistroke in test_data:
     if unistroke.name == dollarRecognizer.recognize(unistroke.points).name:
         true = true + 1
     else:
