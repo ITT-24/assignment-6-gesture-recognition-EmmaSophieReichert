@@ -187,6 +187,8 @@ class DollarRecognizer:
                 unistroke_dict[unistroke.name] = []
             unistroke_dict[unistroke.name].append(unistroke.points)
         
+        print(unistroke_dict.keys)
+
         averaged_unistrokes = []
         for name, points_list in unistroke_dict.items():
             avg_points = self.calculate_average_points(points_list)

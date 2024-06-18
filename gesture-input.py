@@ -121,7 +121,7 @@ class DrawWindow(pyglet.window.Window):
 
             points = [recognizer.Point(px, py, pt) for px, py, pt in self.stroke_points]
             print("TYPE", type)
-            stroke_name = f"{type}_{len(self.strokes) + 1:02}"
+            stroke_name = f"{type}{len(self.strokes) + 1:02}"
             stroke = Stroke(stroke_name, points, len(self.strokes) + 1, duration)
             self.strokes.append(stroke)
             stroke.save_XML()

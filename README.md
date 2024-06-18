@@ -21,6 +21,6 @@ Beim Ausführen des Zeichnens wird auch gleich gespeichert (für Task 2). Hierf�
 
 # Task 2
 
-
+Ich habe das Notebook aus der Vorlesung verwendet und modifiziert. Um die Parameter zu reduzieren, habe ich jeweils die Neuronen um die Hälfte reduziert. 
 
 # Task 3
