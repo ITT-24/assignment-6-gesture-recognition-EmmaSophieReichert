@@ -21,6 +21,12 @@ Beim Ausf체hren des Zeichnens wird auch gleich gespeichert (f체r Task 2). Hierf�
 
 # Task 2
 
-Ich habe das Notebook aus der Vorlesung verwendet und modifiziert. Um die Parameter zu reduzieren, habe ich jeweils die Neuronen um die H채lfte reduziert. 
+Ich habe das Notebook aus der Vorlesung (lstm_demo.ipynb) verwendet und modifiziert. Um die Parameter zu reduzieren, habe ich jeweils die Neuronen um die H채lfte reduziert. 
+Die Auswertung befindet sich in unistroke-gestures.ipynb.
 
 # Task 3
+
+Idee:
+Anwendung, um Buchstaben schreiben zu lernen bzw. Handschrifterkennung.
+
+Auch hierf체r wurde wieder das Notebook lstm_demo.ipynb verwendet. Die ver채nderten Stellen sind entsprechend markiert.

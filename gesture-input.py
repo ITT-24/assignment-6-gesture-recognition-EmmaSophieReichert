@@ -14,12 +14,12 @@ BRUSH_WIDTH = 10
 DRAW_TIME_INTERVAL = 0.0001
 STORE_TIME_INTERVAL = 0.05
 FOLDER_PATH = 'dataset/my-dataset'
+#FOLDER_PATH = 'dataset/letters' #used this for Task 3
 
 type = "stroke"
 
 if len(sys.argv) > 1:
     type = str(sys.argv[1])
-    print("T", type)
 
 #Helper class for storing
 class Stroke:
@@ -95,7 +95,6 @@ class DrawWindow(pyglet.window.Window):
 
     def on_mouse_press(self, x, y, button, modifiers):
         if button == mouse.LEFT:
-            print("LEFT MOUSE")
             self.label.text = ''
             self.drawing = True
             self.start_time = time.time()
@@ -120,7 +119,6 @@ class DrawWindow(pyglet.window.Window):
             duration = int((end_time - self.start_time) * 1000)  # Duration in milliseconds
 
             points = [recognizer.Point(px, py, pt) for px, py, pt in self.stroke_points]
-            print("TYPE", type)
             stroke_name = f"{type}{len(self.strokes) + 1:02}"
             stroke = Stroke(stroke_name, points, len(self.strokes) + 1, duration)
             self.strokes.append(stroke)
