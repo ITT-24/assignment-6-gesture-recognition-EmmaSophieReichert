@@ -231,17 +231,17 @@ class DollarRecognizer:
 
 dollarRecognizer = DollarRecognizer()
 
-test_data = load_unistrokes_from_XML("dataset/data")
-# for p in test_data[1].points:
-#     print("X: ", p.x, "Y: ", p.y)
-# print(test_data[69].name)
-# print(dollarRecognizer.recognize(test_data[69].points))
+# test_data = load_unistrokes_from_XML("dataset/data")
+# # for p in test_data[1].points:
+# #     print("X: ", p.x, "Y: ", p.y)
+# # print(test_data[69].name)
+# # print(dollarRecognizer.recognize(test_data[69].points))
 
-true = 0
-false = 0
-for unistroke in test_data:
-    if unistroke.name == dollarRecognizer.recognize(unistroke.points).name:
-        true = true + 1
-    else:
-        false = false + 1
-print("True: ", str(true), "False: ", str(false))
+# true = 0
+# false = 0
+# for unistroke in test_data:
+#     if unistroke.name == dollarRecognizer.recognize(unistroke.points).name:
+#         true = true + 1
+#     else:
+#         false = false + 1
+# print("True: ", str(true), "False: ", str(false))
