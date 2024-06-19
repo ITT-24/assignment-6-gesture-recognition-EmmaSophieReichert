@@ -27,6 +27,8 @@ Die Auswertung befindet sich in unistroke-gestures.ipynb.
 # Task 3
 
 Idee:
-Anwendung, um Buchstaben schreiben zu lernen bzw. Handschrifterkennung.
+Anwendung, um Buchstaben schreiben zu lernen bzw. Handschrifterkennung. Ich habe dies nur für Vokale in Großbuchstaben implementiert. Links wird jeweils der Buchstabe angezeigt, der auf die Tafel geschrieben werden soll.
 
-Auch hierfür wurde wieder das Notebook lstm_demo.ipynb verwendet. Die veränderten Stellen sind entsprechend markiert.
+![Buchstaben](IMG_1623.jpg)
+
+Auch hierfür wurde wieder das Notebook lstm_demo.ipynb verwendet. Die veränderten Stellen sind entsprechend markiert. Für das Zeichnen wurde wieder pyglet verwendet.
